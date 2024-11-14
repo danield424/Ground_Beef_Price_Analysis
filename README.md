@@ -8,10 +8,11 @@ This project analyzes ground beef pricing trends across major grocery vendors, f
 
 The repo is structured as:
 
--   `data/analysis_data` contains the dataset obtained from Project Hammer ([URL here]) and cleaned using SQLite.
+-   `data/simulated_data` contains simulated data using R.
+-   `data/analysis_data` contains the dataset obtained from [Project Hammer](https://jacobfilipp.com/hammer/) and cleaned using SQLite.
 -   `other` contains relevant literature, details about LLM chat interactions, and sketches.
 -   `paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
--   `scripts` contains the R scripts used to simulate, download and clean data.
+-   `scripts` contains the R and SQL scripts used to simulate, clean, and test data.
 
 
 ## Statement on LLM usage
