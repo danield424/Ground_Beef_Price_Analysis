@@ -1,52 +1,31 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
-  #state and party that won each division.
-# Author: Rohan Alexander
-# Date: 26 September 2024
-# Contact: rohan.alexander@utoronto.ca
+# Purpose: Simulates a dataset of ground beef prices depending on store.
+# Author: Daniel Du
+# Date: 14 November 2024
+# Contact: danielc.du@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: The `tidyverse` package must be installed
-# Any other information needed? Make sure you are in the `starter_folder` rproj
+# Any other information needed? Make sure you are in the correct Rproj
 
 
 #### Workspace setup ####
 library(tidyverse)
-set.seed(853)
-
+set.seed(424)
 
 #### Simulate data ####
-# State names
-states <- c(
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "South Australia",
-  "Western Australia",
-  "Tasmania",
-  "Northern Territory",
-  "Australian Capital Territory"
-)
 
-# Political parties
-parties <- c("Labor", "Liberal", "Greens", "National", "Other")
+# Define parameters
+stores <- c("Loblaws", "Metro", "Sobeys", "Freshco", "T&T")
+ground_beef_types <- c("Extra Lean Ground Beef", "Lean Ground Beef", "Medium Ground Beef")
 
-# Create a dataset by randomly assigning states and parties to divisions
+# Simulate dataset
 analysis_data <- tibble(
-  division = paste("Division", 1:151),  # Add "Division" to make it a character
-  state = sample(
-    states,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.25, 0.25, 0.15, 0.1, 0.1, 0.1, 0.025, 0.025) # Rough state population distribution
-  ),
-  party = sample(
-    parties,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.40, 0.40, 0.05, 0.1, 0.05) # Rough party distribution
-  )
+  store = sample(stores, 100, replace = TRUE),
+  ground_beef_type = sample(ground_beef_types, 100, replace = TRUE),
+  price_per_lb = round(runif(100, min = 4, max = 10), 2),  # Random price between $4 and $10 per lb
+  date = sample(seq.Date(as.Date("2024-01-01"), as.Date("2024-11-14"), by = "day"), 100, replace = TRUE)
 )
-
+head(analysis_data)
 
 #### Save data ####
 write_csv(analysis_data, "data/00-simulated_data/simulated_data.csv")

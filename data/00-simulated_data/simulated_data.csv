@@ -1,152 +1,101 @@
-division,state,party
-Division 1,Victoria,Liberal
-Division 2,New South Wales,Liberal
-Division 3,Tasmania,Liberal
-Division 4,New South Wales,Liberal
-Division 5,Queensland,Liberal
-Division 6,New South Wales,Labor
-Division 7,Victoria,Liberal
-Division 8,Western Australia,Labor
-Division 9,Western Australia,Greens
-Division 10,Queensland,Labor
-Division 11,Queensland,Labor
-Division 12,Northern Territory,Liberal
-Division 13,New South Wales,Labor
-Division 14,Western Australia,Labor
-Division 15,Western Australia,National
-Division 16,Victoria,Liberal
-Division 17,South Australia,Liberal
-Division 18,Victoria,Liberal
-Division 19,Western Australia,Labor
-Division 20,South Australia,Labor
-Division 21,New South Wales,Liberal
-Division 22,Queensland,Greens
-Division 23,New South Wales,Liberal
-Division 24,New South Wales,Liberal
-Division 25,Queensland,Labor
-Division 26,Victoria,National
-Division 27,New South Wales,Liberal
-Division 28,Queensland,Liberal
-Division 29,Tasmania,Liberal
-Division 30,South Australia,Liberal
-Division 31,New South Wales,Liberal
-Division 32,Victoria,Labor
-Division 33,Tasmania,Liberal
-Division 34,New South Wales,Liberal
-Division 35,Western Australia,Labor
-Division 36,New South Wales,Liberal
-Division 37,Tasmania,Greens
-Division 38,Tasmania,Labor
-Division 39,Victoria,Greens
-Division 40,South Australia,Labor
-Division 41,New South Wales,Other
-Division 42,New South Wales,Other
-Division 43,Tasmania,Labor
-Division 44,Tasmania,National
-Division 45,Queensland,Liberal
-Division 46,Australian Capital Territory,Other
-Division 47,Queensland,Labor
-Division 48,Queensland,Other
-Division 49,South Australia,Liberal
-Division 50,Victoria,National
-Division 51,South Australia,Liberal
-Division 52,Victoria,Labor
-Division 53,South Australia,National
-Division 54,Queensland,Liberal
-Division 55,Queensland,Labor
-Division 56,South Australia,Liberal
-Division 57,New South Wales,Other
-Division 58,Northern Territory,Liberal
-Division 59,New South Wales,Labor
-Division 60,Western Australia,Labor
-Division 61,New South Wales,Liberal
-Division 62,South Australia,Liberal
-Division 63,Queensland,Labor
-Division 64,Tasmania,Labor
-Division 65,South Australia,Labor
-Division 66,Victoria,Labor
-Division 67,Queensland,Liberal
-Division 68,Queensland,Liberal
-Division 69,Tasmania,Labor
-Division 70,South Australia,National
-Division 71,Australian Capital Territory,Labor
-Division 72,Western Australia,Labor
-Division 73,Queensland,National
-Division 74,Victoria,Labor
-Division 75,Western Australia,Labor
-Division 76,Tasmania,Labor
-Division 77,Queensland,Liberal
-Division 78,Western Australia,Liberal
-Division 79,Queensland,Labor
-Division 80,Queensland,Liberal
-Division 81,Victoria,Labor
-Division 82,New South Wales,Liberal
-Division 83,Victoria,Liberal
-Division 84,Queensland,National
-Division 85,Western Australia,Liberal
-Division 86,New South Wales,Labor
-Division 87,Queensland,Liberal
-Division 88,New South Wales,Liberal
-Division 89,Tasmania,Liberal
-Division 90,South Australia,Labor
-Division 91,Victoria,Liberal
-Division 92,New South Wales,Labor
-Division 93,Tasmania,Labor
-Division 94,South Australia,Labor
-Division 95,Victoria,Liberal
-Division 96,Victoria,Labor
-Division 97,Western Australia,Liberal
-Division 98,Queensland,Liberal
-Division 99,South Australia,Liberal
-Division 100,New South Wales,Labor
-Division 101,South Australia,Labor
-Division 102,New South Wales,Labor
-Division 103,Victoria,Labor
-Division 104,Victoria,Labor
-Division 105,South Australia,Other
-Division 106,Western Australia,Labor
-Division 107,Tasmania,Liberal
-Division 108,Victoria,Labor
-Division 109,Queensland,Liberal
-Division 110,Victoria,Labor
-Division 111,Australian Capital Territory,Labor
-Division 112,Victoria,Liberal
-Division 113,Victoria,Liberal
-Division 114,Victoria,Liberal
-Division 115,Tasmania,Labor
-Division 116,Victoria,Labor
-Division 117,New South Wales,Labor
-Division 118,Victoria,Labor
-Division 119,Victoria,Greens
-Division 120,Northern Territory,Labor
-Division 121,South Australia,Liberal
-Division 122,New South Wales,Liberal
-Division 123,New South Wales,Labor
-Division 124,New South Wales,Liberal
-Division 125,New South Wales,National
-Division 126,New South Wales,Labor
-Division 127,Queensland,Labor
-Division 128,New South Wales,Other
-Division 129,Queensland,Labor
-Division 130,Australian Capital Territory,Liberal
-Division 131,Tasmania,Greens
-Division 132,New South Wales,National
-Division 133,New South Wales,Labor
-Division 134,Northern Territory,Labor
-Division 135,South Australia,National
-Division 136,Victoria,Labor
-Division 137,Tasmania,National
-Division 138,South Australia,Liberal
-Division 139,New South Wales,Labor
-Division 140,Victoria,Other
-Division 141,Queensland,Greens
-Division 142,Victoria,National
-Division 143,Western Australia,Labor
-Division 144,Victoria,Labor
-Division 145,Queensland,Liberal
-Division 146,Tasmania,Liberal
-Division 147,South Australia,Liberal
-Division 148,Victoria,Labor
-Division 149,New South Wales,National
-Division 150,New South Wales,Labor
-Division 151,Victoria,Liberal
+store,ground_beef_type,price_per_lb,date
+Sobeys,Medium Ground Beef,4.84,2024-08-09
+Sobeys,Extra Lean Ground Beef,6.09,2024-01-02
+T&T,Medium Ground Beef,9.84,2024-07-27
+T&T,Extra Lean Ground Beef,9.92,2024-10-20
+Metro,Lean Ground Beef,5.36,2024-05-04
+Loblaws,Extra Lean Ground Beef,4.54,2024-03-29
+T&T,Lean Ground Beef,8.74,2024-11-10
+Freshco,Extra Lean Ground Beef,6.68,2024-01-27
+Metro,Lean Ground Beef,7.04,2024-09-27
+T&T,Lean Ground Beef,4.05,2024-02-22
+T&T,Lean Ground Beef,9.15,2024-09-18
+Freshco,Lean Ground Beef,7.17,2024-01-09
+Metro,Extra Lean Ground Beef,7.8,2024-10-31
+Freshco,Medium Ground Beef,9.57,2024-04-19
+T&T,Extra Lean Ground Beef,6.43,2024-09-10
+Metro,Lean Ground Beef,7.22,2024-05-29
+Freshco,Medium Ground Beef,6.27,2024-08-25
+Sobeys,Medium Ground Beef,5.32,2024-05-05
+Loblaws,Lean Ground Beef,6.65,2024-06-19
+Loblaws,Extra Lean Ground Beef,7.2,2024-10-23
+Metro,Medium Ground Beef,7.99,2024-08-08
+Metro,Extra Lean Ground Beef,9.93,2024-04-29
+T&T,Extra Lean Ground Beef,8,2024-02-18
+Loblaws,Lean Ground Beef,8.57,2024-08-11
+Sobeys,Extra Lean Ground Beef,8.25,2024-02-03
+Freshco,Extra Lean Ground Beef,5.91,2024-01-22
+Metro,Medium Ground Beef,5.53,2024-02-13
+Metro,Medium Ground Beef,9.13,2024-09-02
+Freshco,Lean Ground Beef,7.19,2024-03-07
+Freshco,Lean Ground Beef,5.84,2024-07-25
+Loblaws,Medium Ground Beef,9.43,2024-05-03
+Sobeys,Extra Lean Ground Beef,5.23,2024-09-17
+Metro,Lean Ground Beef,5.81,2024-01-01
+Loblaws,Medium Ground Beef,6.14,2024-07-12
+Metro,Medium Ground Beef,4.25,2024-07-14
+Freshco,Lean Ground Beef,5.41,2024-08-20
+Metro,Extra Lean Ground Beef,8.59,2024-11-03
+T&T,Medium Ground Beef,4.78,2024-07-19
+Metro,Medium Ground Beef,7.73,2024-01-10
+Loblaws,Medium Ground Beef,9.11,2024-08-10
+T&T,Extra Lean Ground Beef,5.42,2024-07-05
+Metro,Extra Lean Ground Beef,9.77,2024-03-04
+Freshco,Medium Ground Beef,5.82,2024-09-10
+Metro,Extra Lean Ground Beef,4.08,2024-09-30
+Sobeys,Extra Lean Ground Beef,7.13,2024-09-19
+Loblaws,Extra Lean Ground Beef,6.62,2024-06-28
+Metro,Extra Lean Ground Beef,8.43,2024-01-21
+T&T,Extra Lean Ground Beef,6.32,2024-05-27
+Sobeys,Extra Lean Ground Beef,7.32,2024-06-26
+T&T,Medium Ground Beef,4.66,2024-10-24
+Sobeys,Extra Lean Ground Beef,8.52,2024-01-01
+Metro,Medium Ground Beef,5.13,2024-09-15
+T&T,Lean Ground Beef,6.24,2024-09-23
+Metro,Extra Lean Ground Beef,8.57,2024-03-22
+Loblaws,Extra Lean Ground Beef,7.62,2024-04-06
+Sobeys,Medium Ground Beef,7.71,2024-03-26
+Freshco,Extra Lean Ground Beef,5.84,2024-09-08
+Freshco,Lean Ground Beef,9.1,2024-08-02
+T&T,Medium Ground Beef,9.56,2024-06-26
+Loblaws,Lean Ground Beef,5.71,2024-05-07
+Freshco,Lean Ground Beef,5.5,2024-08-02
+Sobeys,Lean Ground Beef,9.38,2024-05-23
+Sobeys,Lean Ground Beef,4.3,2024-06-15
+Loblaws,Extra Lean Ground Beef,6.82,2024-09-13
+T&T,Medium Ground Beef,8.11,2024-06-10
+Loblaws,Medium Ground Beef,8.6,2024-09-16
+Metro,Extra Lean Ground Beef,5.37,2024-10-18
+Freshco,Lean Ground Beef,4.6,2024-04-07
+Loblaws,Extra Lean Ground Beef,7.45,2024-06-28
+Freshco,Lean Ground Beef,6.89,2024-03-14
+Sobeys,Extra Lean Ground Beef,9.32,2024-07-01
+Sobeys,Extra Lean Ground Beef,8.34,2024-05-10
+T&T,Medium Ground Beef,4.41,2024-10-16
+T&T,Lean Ground Beef,5.32,2024-09-04
+Metro,Lean Ground Beef,9.49,2024-03-02
+Metro,Extra Lean Ground Beef,9.1,2024-03-12
+Freshco,Lean Ground Beef,4.75,2024-09-10
+Loblaws,Medium Ground Beef,4.34,2024-09-17
+Freshco,Medium Ground Beef,9.61,2024-09-30
+Loblaws,Medium Ground Beef,6.62,2024-08-17
+T&T,Medium Ground Beef,6.96,2024-02-05
+Freshco,Lean Ground Beef,7.98,2024-07-23
+Freshco,Extra Lean Ground Beef,8.13,2024-10-24
+T&T,Medium Ground Beef,6.63,2024-07-18
+Loblaws,Extra Lean Ground Beef,5.33,2024-08-12
+Freshco,Medium Ground Beef,4.25,2024-03-21
+Freshco,Medium Ground Beef,8.46,2024-06-22
+Metro,Lean Ground Beef,8.28,2024-06-01
+Metro,Lean Ground Beef,6.11,2024-10-11
+Loblaws,Extra Lean Ground Beef,9.43,2024-01-12
+Loblaws,Extra Lean Ground Beef,5.01,2024-09-26
+Loblaws,Medium Ground Beef,6.74,2024-11-03
+Metro,Extra Lean Ground Beef,4.82,2024-03-23
+Loblaws,Lean Ground Beef,8.77,2024-01-15
+T&T,Medium Ground Beef,4.43,2024-03-21
+Sobeys,Lean Ground Beef,4.97,2024-11-08
+T&T,Medium Ground Beef,8.46,2024-10-24
+T&T,Medium Ground Beef,8.08,2024-02-10
+Metro,Lean Ground Beef,6.38,2024-08-01
+Sobeys,Medium Ground Beef,5.29,2024-05-08
