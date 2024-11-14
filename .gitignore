@@ -3,3 +3,4 @@
 
 # Ignore raw_data
 data/01-raw_data
+.Rproj.user

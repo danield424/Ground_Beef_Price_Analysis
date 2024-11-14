@@ -1,12 +1,12 @@
 ---
-title: "xxx"
+title: "Comparing Ground Beef Prices by Type and Vendor: Optimal Consumer Choices"
 author: 
   - Daniel Du
   - Michelle Ji
 thanks: "Code and data are available at: [https://github.com/danield424/Ground_Beef_Price_Analysis/](https://github.com/danield424/Ground_Beef_Price_Analysis/)."
 date: today
 date-format: long
-abstract: xxx
+abstract: This paper analyzes ground beef prices across major grocery vendors, examining how pricing varies by type (medium, lean, extra lean) and store. We find that medium ground beef is generally the most affordable option, while extra lean is the most expensive, with significant differences observed between vendors. Notably, Voila and Save-On-Foods consistently offer below-average prices, while Metro displays the greatest price variability. These insights provide consumers with a clearer understanding of where to find the best value for their preferred ground beef type, helping them make informed decisions about grocery purchases.
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -22,64 +22,201 @@ library(tidyverse)
 
 
 # Introduction
-xxx
 
+The grocery market plays an increasingly vital role in daily life, influencing consumer meal planning and budgeting for essential items. As one of the most widely consumed proteins, ground beef is a staple across households, with prices and preferences varying by type and store. Factors such as ground beef type (e.g., lean, medium, extra lean) and retailer play a significant role in determining price, impacting consumer decisions and shopping habits. This paper explores ground beef pricing trends across major vendors, focusing on the price differences between various ground beef types at different grocery stores. Our findings aim to provide consumers with insights into where they can find the best value for their preferred ground beef type, helping them make more informed decisions about where and when to buy.
 
-The music industry continues to increase significance in everyday life, from listening to music on a daily commute to school or work to music played in stores. Culture and region also plays a role in what artists and songs are popular, as seen with various Billboard 100 lists from different countries. This paper examines the difference between music listening in the United States and the United Kingdom, focusing on danceability as the main component for music listening habits. Our findings highlight key features of music that artists could use to see what is popular with their listeners the most, depending if they are a more popular artist in a specific region. 
-
-The paper is broken down into various sections. @sec-data explores the data, looking at ground beef prices of different stores over time. @sec-results introduces observations and potential conclusions from the data analysis.
-
+The paper is broken down into various sections. @sec-data explores the data, looking at ground beef prices of different types and stores over time. @sec-results introduces observations and potential conclusions from the data analysis. @sec-discussion discusses potential issues to be aware of with the data and our analysis.
 
 # Data {#sec-data}
 
-We use @citeR and @tidyverse. We pull @spotify artist audio features data using @spotifyr a wrapper around Spotify’s API. We find the top three US artists from @billboard and the top three artists in the UK from @musicmetricsvault. We drop Chappell Roan as a top three candidate because of her short album history. The artists’ danceability are averaged out to create country-level danceability averages over time.
+We use @citeR and @tidyverse. Data is downloaded from @project-hammer. We use @SQL to clean the data, filtering for 1lb ground beef products for every store. We look at the price over time of 1 pound of different types of ground beef from various vendors by filtering the data to search for only ground beef products that weigh ~454g (with 5g margin of error). We exclude products like organic, kosher, halal ground beef, and assign ground beef to be of type medium, lean, or extra lean. If there are multiple price updates of the same product on the same date for the same store, we choose the cheapest values, since we assume there was an error with data collection and keep the most accurate.
 
 ```{r, include=FALSE}
-# Read in data 
+# Read in data
 #| echo: false
+data <- read_csv("../data/02-analysis_data/cleaned_data.csv")
+ground_beef_data2 <- data %>%
+  mutate(dollars_per_lb = str_extract(price_per_unit_lb, "\\d+\\.\\d{1,2}") %>% as.numeric(),
+         date = as.Date(nowtime),
+         ground_beef_type = case_when(
+          str_detect(product_name, regex("extra", ignore_case = TRUE)) ~ "Extra Lean",
+          str_detect(product_name, regex("medium", ignore_case = TRUE)) ~ "Medium",
+          TRUE ~ "Lean")
+         )
+ground_beef_data <- ground_beef_data2 %>% select(date, vendor, ground_beef_type, dollars_per_lb) %>% 
+  group_by(vendor, date, ground_beef_type) %>%
+  slice_min(dollars_per_lb, with_ties = FALSE) %>%
+  ungroup()
 
+ground_beef_data
 ```
-
 
 
 ```{r}
 #| echo: false
 #| label: fig-1
 #| warning: false
-#| 
+#| fig-cap: Ground beef prices, all vendors, June 1 - November 14, 2024.
 
+# Ensure continuous date range for each vendor and ground beef type
+filled_data <- ground_beef_data %>%
+  complete(
+    date = seq.Date(as.Date("2024-06-01"), as.Date("2024-11-14"), by = "day"),
+    vendor, ground_beef_type,
+    fill = list(dollars_per_lb = NA)
+  ) %>%
+  group_by(vendor, ground_beef_type) %>%
+  # Forward and backward fill for each vendor individually
+  fill(dollars_per_lb, .direction = "down") %>%
+  fill(dollars_per_lb, .direction = "up") %>%
+  ungroup()
+
+# Calculate the daily average price across vendors for each ground beef type
+daily_avg_prices <- filled_data %>%
+  group_by(date, ground_beef_type) %>%
+  summarize(avg_dollars_per_lb = mean(dollars_per_lb, na.rm = TRUE)) %>%
+  ungroup()
+
+# Plot the time series
+ggplot(daily_avg_prices, aes(x = date, y = avg_dollars_per_lb, color = ground_beef_type)) +
+  geom_line() +
+  labs(
+    title = "Ground Beef Prices",
+    x = "Date",
+    y = "Average $ per lb",
+    color = "Ground Beef Type"
+  ) +
+  scale_x_date(date_labels = "%b %d", date_breaks = "1 month") +
+  theme_minimal()
 ```
-
-
-
-
-
-
 
 ```{r}
 #| echo: false
 #| label: fig-2
 #| warning: false
+#| fig-cap: Medium ground beef prices of each vendor from June 1 - November 14, 2024.
 
+# Filter the data to include only "Medium" ground beef type
+medium_beef_data <- filled_data %>%
+  filter(ground_beef_type == "Medium") %>%
+  group_by(date, vendor) %>%
+  # Calculate the daily average price for "Medium" ground beef per vendor
+  summarize(avg_dollars_per_lb = mean(dollars_per_lb, na.rm = TRUE)) %>%
+  ungroup()
+
+# Plot the time series for "Medium" ground beef prices per vendor
+ggplot(medium_beef_data, aes(x = date, y = avg_dollars_per_lb, color = vendor)) +
+  geom_line() +
+  labs(
+    title = "Medium Ground Beef Prices by Store",
+    x = "Date",
+    y = "$ per lb",
+    color = "Vendor"
+  ) +
+  scale_x_date(date_labels = "%b %d", date_breaks = "1 month") +
+  theme_minimal()
 ```
-
 ```{r}
 #| echo: false
 #| label: fig-3
 #| warning: false
+#| fig-cap: Lean ground beef prices of each vendor from June 1 - November 14, 2024.
 
+# Same code as above, but for lean beef
+lean_beef_data <- filled_data %>%
+  filter(ground_beef_type == "Lean") %>%
+  group_by(date, vendor) %>%
+  summarize(avg_dollars_per_lb = mean(dollars_per_lb, na.rm = TRUE)) %>%
+  ungroup()
 
+ggplot(lean_beef_data, aes(x = date, y = avg_dollars_per_lb, color = vendor)) +
+  geom_line() +
+  labs(
+    title = "Lean Ground Beef Prices by Store",
+    x = "Date",
+    y = "$ per lb",
+    color = "Vendor"
+  ) +
+  scale_x_date(date_labels = "%b %d", date_breaks = "1 month") +
+  theme_minimal()
 ```
+```{r}
+#| echo: false
+#| label: fig-4
+#| warning: false
+#| fig-cap: Extra lean ground beef prices of each vendor from June 1 - November 14, 2024.
 
+# Same code as above, but for extra lean beef
+extralean_beef_data <- filled_data %>%
+  filter(ground_beef_type == "Extra Lean") %>%
+  group_by(date, vendor) %>%
+  summarize(avg_dollars_per_lb = mean(dollars_per_lb, na.rm = TRUE)) %>%
+  ungroup()
 
+ggplot(extralean_beef_data, aes(x = date, y = avg_dollars_per_lb, color = vendor)) +
+  geom_line() +
+  labs(
+    title = "Extra Lean Ground Beef Prices by Store",
+    x = "Date",
+    y = "$ per lb",
+    color = "Vendor"
+  ) +
+  scale_x_date(date_labels = "%b %d", date_breaks = "1 month") +
+  theme_minimal()
+```
+```{r}
+#| echo: false
+#| label: fig-5
+#| warning: false
+#| fig-cap: Cheapest ground beef pound at each vendor from June 1 - November 14, 2024.
 
+# Find the minimum-priced ground beef type for each store on each date
+min_price_data <- filled_data %>%
+  group_by(date, vendor) %>%
+  # Select the row with the minimum price for each date and vendor
+  slice_min(dollars_per_lb, with_ties = FALSE) %>%
+  ungroup()
+
+daily_avg_min_price <- min_price_data %>%
+  group_by(date) %>%
+  summarize(avg_min_price = mean(dollars_per_lb, na.rm = TRUE)) %>%
+  ungroup()
+
+# Plot the minimum price for each store over time
+ggplot(min_price_data, aes(x = date, y = dollars_per_lb, color = vendor)) +
+  geom_line() +
+  geom_line(data = daily_avg_min_price, aes(x = date, y = avg_min_price), 
+            color = "black", linetype = "dashed", size = 1) +
+  labs(
+    title = "Cheapest Ground Beef by Store",
+    x = "Date",
+    y = "$ per lb",
+    color = "Vendor"
+  ) +
+  scale_x_date(date_labels = "%b %d", date_breaks = "1 month") +
+  theme_minimal()
+```
 
 \newpage
 
 # Results {#sec-results}
 
-We find that the top three artists from the United Kingdom, which include Dua Lipa, Ed Sheeran, and Adele, tend to have higher danceability levels than the top three artists from the United States, which include Sabrina Carpenter, Taylor Swift, and Billie Eilish. @fig-1 details the average danceability across the top three United States artists. @fig-2 shows the average danceability across the top three United Kingdom artists. @fig-3 highlights the average danceability of top three artists in both the US and the UK. From this graph, we can see that the UK top three artists have higher average danceability levels than the US. 
+From @fig-1, we find that on average across all vendors, medium ground beef is the cheapest, followed by lean and then extra lean. @fig-2, @fig-3, @fig-4 show the price over time of each type of ground beef for each vendor. Finally, @fig-5 shows the price over time of the cheapest pound of ground beef each vendor has at any given time, as well as the average among vendors of the cheapest pound of ground beef. From this graph, we can see that Voila and Save on Foods usually have below-average prices for ground beef, while Metro has the greatest variance, having both the cheapest and most expensive ground beef on different dates.
 
+# Discussion {#sec-discussion}
+
+
+## Correlation vs. Causation
+
+Correlation vs causation should always be taken into account when drawing conclusions from analysis. For example, the analysis reveals a pattern where medium ground beef tends to be the cheapest option across all vendors, followed by lean and extra lean types. However, this observed relationship between ground beef type and price should be interpreted as a correlation, not a causative link. For example, while medium ground beef is consistently priced lower, this does not imply that its type alone directly determines its price. Other factors, such as consumer demand, production costs, and vendor-specific pricing strategies, likely play a role in setting these prices. Therefore, while the data highlights trends in ground beef pricing by type, further investigation would be required to understand the underlying factors driving these price differences.
+
+## Missing Data 
+
+One limitation in this analysis is the potential impact of missing data. Price data from each vendor was not collected every day, which could affect our interpretation of price trends over time. While we addressed missing data by interpolating values, this approach has limitations and may not fully capture the true pricing trends. For instance, prices could temporarily drop for promotions or rise due to supply issues, which interpolation would smooth out, potentially obscuring the true variability in prices. Collecting more consistent data would provide a more accurate and nuanced picture of price trends over time.
+
+## Sources of Bias
+
+Several potential sources of bias could influence the findings of this analysis. Selection bias may arise from the choice of vendors included, as different stores may target different consumer demographics or operate in different pricing tiers. Moreover, screen-scraping data from public websites may capture only advertised prices, which may differ from in-store prices or reflect temporary promotions rather than regular pricing. Finally, regional variations in demand and supply, which influence ground beef pricing, might not be fully represented in a dataset focused on a single region. Recognizing these sources of bias is crucial for interpreting the results with an understanding of the study's limitations.
 
 \newpage
 
