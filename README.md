@@ -1,4 +1,4 @@
-# Ground Beef Price Analysis.
+# Ground Beef Price Analysis
 
 ## Overview
 
