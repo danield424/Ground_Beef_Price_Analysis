@@ -1,0 +1,88 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "cleaned_table2" (
+	"nowtime"	TEXT,
+	"vendor"	TEXT,
+	"product_name"	TEXT,
+	"units"	TEXT,
+	"current_price"	TEXT,
+	"price_per_unit_lb"	
+);
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:14:00','Loblaws','Extra Lean Ground Beef','450g','9.00','$9.08/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:19:00','Loblaws','Free From Extra Lean Ground Beef','454g','10.99','$10.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:19:00','Loblaws','Free From Lean Ground Beef','454g','9.99','$9.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:47:00','Loblaws','Lean Ground Beef','450g','8.00','$8.08/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:47:00','Loblaws','Lean Ground Beef','454g','7.00','$6.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:56:00','Loblaws','Medium Ground Beef','450g','7.00','$7.08/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-12 10:23:00','Loblaws','Extra Lean Ground Beef','450g','9.49','$9.58/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-12 10:48:00','Loblaws','Lean Ground Beef','450g','8.49','$8.58/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-12 10:48:00','Loblaws','Lean Ground Beef','454g','7.99','$7.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-12 10:54:00','Loblaws','Medium Ground Beef','450g','7.49','$7.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-07-20 13:04:00','Loblaws','Grass Fed Lean Ground Beef','450g','7.00','$7.08/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-08-02 12:08:00','Loblaws','Medium Ground Beef','450g','6.49','$6.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-11 10:08:00','Loblaws','Extra Lean Ground Beef','450g',NULL,'$9.58/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-11 10:13:00','Loblaws','Free From Extra Lean Ground Beef','454g',NULL,'$10.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-11 10:13:00','Loblaws','Free From Lean Ground Beef','454g',NULL,'$9.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-11 10:23:00','Loblaws','Grass Fed Lean Ground Beef','450g',NULL,'$7.08/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-11 10:37:00','Loblaws','Lean Ground Beef','450g',NULL,'$8.58/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-12 11:17:00','Loblaws','Medium Ground Beef','450g',NULL,'$6.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-12 11:17:00','Loblaws','Medium Ground Beef','450g',NULL,'$7.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-16 12:32:00','Loblaws','Grass-Fed Medium Ground Beef','450g','6.49','$6.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-26 10:58:00','Loblaws','Grass Fed Lean Ground Beef','450g','7.49','$7.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-26 10:58:00','Loblaws','Grass-Fed Medium Ground Beef','450g','7.00','$7.08/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 01:04:00','Metro','Grass Fed New Zealand Extra Lean Ground Beef, Naturalia','454g','9.99','$9.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 01:04:00','Metro','Grass Fed New Zealand Lean Ground Beef, Naturalia','454g','8.99','$8.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-13 11:50:00','Metro','Grass Fed New Zealand Lean Ground Beef, Naturalia','454g','7.99','$7.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-20 12:38:00','Metro','Grass Fed New Zealand Extra Lean Ground Beef, Naturalia','454g','8.99','$8.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-07-11 10:03:00','Metro','Grass Fed New Zealand Lean Ground Beef, Naturalia','454g','9.99','$9.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-07-11 10:09:00','Metro','Grass Fed New Zealand Extra Lean Ground Beef, Naturalia','454g','10.99','$10.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-07-31 09:16:00','Metro','Lean Ground Beef','454g','9.99','$9.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-06 13:39:00','Metro','Organic Lean Ground Beef','454g','10.99','$10.99 /un.');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-10-18 12:22:00','Metro','Grass Fed New Zealand Extra Lean Ground Beef, Naturalia','454g','2.99','$3.0/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-10-25 11:01:00','Metro','Organic Lean Ground Beef','454g','9.99','$9.99 /un.');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:05:00','NoFrills','Extra Lean Ground Beef','454g','8.29','$8.31/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:09:00','NoFrills','Free From Lean Ground Beef','454g','9.00','$8.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:43:00','NoFrills','Lean Ground Beef','454g','7.29','$7.31/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:50:00','NoFrills','Medium Ground Beef','450g','6.49','$6.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-11 00:50:00','NoFrills','Medium Ground Beef','454g','6.29','$6.31/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-07-20 12:58:00','NoFrills','Grass Fed Lean Ground Beef','450g','7.00','$7.08/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-08-02 12:05:00','NoFrills','Medium Ground Beef','450g','6.00','$6.04/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-11 10:06:00','NoFrills','Free From Lean Ground Beef','454g',NULL,'$8.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-11 10:16:00','NoFrills','Grass Fed Lean Ground Beef','450g',NULL,'$7.08/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-11 10:45:00','NoFrills','Medium Ground Beef','450g',NULL,'$6.04/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-12 11:17:00','NoFrills','Medium Ground Beef','450g',NULL,'$6.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-16 12:28:00','NoFrills','Grass-Fed Medium Ground Beef','450g','6.00','$6.04/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-28 10:50:00','SaveOnFoods','Western Canadian - Extra Lean Ground Beef, 454 Gram','454g','8.00','$7.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-28 10:50:00','SaveOnFoods','Western Canadian - Lean Ground Beef, 454 Gram','454g','7.00','$6.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-28 10:50:00','SaveOnFoods','Western Family - Extra Lean Ground Beef, 454 Gram','454g','7.79','$7.81/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-28 10:50:00','SaveOnFoods','Western Family - Lean Ground Beef, 454 Gram','454g','6.79','$6.81/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-10 23:23:00','Voila','Extra Lean Ground Beef 454 g','454g','8.99','$8.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-10 23:23:00','Voila','Ground Beef Lean 454 g','454g','7.49','$7.49/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-10 23:23:00','Voila','Medium Ground Beef 454 g','454g','7.49','$7.49/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-10 23:23:00','Voila','Springvale Grass Fed Ground Beef Lean 454 g','485g','8.00','$7.49/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-20 11:36:00','Voila','Ground Beef Lean 454 g','454g','6.97','$6.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-28 11:00:00','Voila','Extra Lean Ground Beef 454 g','454g','9.99','$9.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-28 11:00:00','Voila','Ground Beef Lean 454 g','454g','8.49','$8.49/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-28 11:00:00','Voila','Medium Ground Beef 454 g','454g','8.49','$8.49/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-07-10 08:08:00','Voila','Ground Beef Lean 454 g','454g','4.24','$4.22/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-07-11 09:07:00','Voila','Extra Lean Ground Beef 454 g','454g','7.19','$7.17/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-07-16 09:51:00','Voila','Medium Ground Beef 454 g','454g','4.24','$4.22/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-07-25 09:49:00','Voila','Ground Beef Lean 454 g','454g','5.99','$5.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-08-29 08:24:00','Voila','Extra Lean Ground Beef 454 g','454g','7.99','$7.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-05 10:27:00','Voila','Ground Beef Lean 454 g','454g','6.99','$6.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-10-03 08:43:00','Voila','Extra Lean Ground Beef 454 g','454g','9.49','$9.49/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-10-17 09:29:00','Voila','Ground Beef Lean 454 g','454g','7.54','$7.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-11-07 08:39:00','Voila','Ground Beef Lean 454 g','454g','7.99','$7.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-10 23:26:00','Walmart','Ground Beef Lean Tube, Your Fresh Market, 454 g (1 lb)','454 g (1 lb)','7.48','$7.49/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-10 23:28:00','Walmart','Medium Ground Beef, Your Fresh Market, 454 g','454g','5.97','$5.95/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-10 23:32:00','Walmart','Extra Lean Ground Beef, Your Fresh Market, 454 g','454g','7.97','$7.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-15 22:47:00','Walmart','Ground Beef Lean Tube, Your Fresh Market, 454 g (1 lb)','454 g (1 lb)','6.97','$6.99/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-18 07:18:00','Walmart','Medium Ground Beef, Your Fresh Market, 450 g','450g','6.48','$6.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-20 22:02:00','Walmart','Extra Lean Ground Beef, Your Fresh Market, 450 g','450g','8.47','$8.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-20 22:02:00','Walmart','Lean Ground Beef, Your Fresh Market, 450 g','450g','7.48','$7.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-21 15:29:00','Walmart','Extra Lean Ground Beef, Your Fresh Market, 450 g','450g','8.48','$8.54/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-06-25 10:07:00','Walmart','Medium Ground Beef, Your Fresh Market, 450 g','450g','6.48','$6.17/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-08-12 10:32:00','Walmart','Extra Lean Sirloin Ground Beef, Your Fresh Market, 450 g','450g','9.48','$9.58/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-08-30 09:51:00','Walmart','Medium Ground Beef, Your Fresh Market, 450 g','450g','6.98','$7.04/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-09-26 10:30:00','Walmart','Medium Ground Beef, Your Fresh Market, 450 g','450g','6.98','$6.67/lb');
+INSERT INTO "cleaned_table2" ("nowtime","vendor","product_name","units","current_price","price_per_unit_lb") VALUES ('2024-11-07 09:12:00','Walmart','Boeuf Quebec Lean Ground Beef, 454 g','454g','7.78','$7.76/lb');
+COMMIT;
